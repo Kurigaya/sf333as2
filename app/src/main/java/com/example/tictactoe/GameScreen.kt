@@ -59,7 +59,7 @@ fun GameScreen(
         ) {
             Text(text = "Player 'O': ${state.playerCircleCount}", fontSize = 16.sp)
             Text(text = "Draw: ${state.drawCount}", fontSize = 16.sp)
-            Text(text = "Player 'X': ${state.playerCrossCount}", fontSize = 16.sp)
+            Text(text = "Computer 'X': ${state.playerCrossCount}", fontSize = 16.sp)
         }
         Text(
             text = "Tic Tac Toe",
@@ -153,8 +153,11 @@ fun GameScreen(
                 elevation = ButtonDefaults.buttonElevation(5.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = BlueCustom,
-                    contentColor = Color.White
-                )
+                    contentColor = Color.White,
+                    disabledContainerColor = Color.Gray,
+                    disabledContentColor = Color.White
+                ),
+                enabled = state.hasWon || viewModel.hasBoardFull()
             ) {
                 Text(text = "Play Again", fontSize = 16.sp)
             }
