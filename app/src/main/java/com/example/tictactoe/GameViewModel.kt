@@ -63,7 +63,7 @@ class GameViewModel : ViewModel() {
                 victoryType = VictoryType.NONE,
                 hasWon = false
             )
-            computerMove()
+            computerMove() //Perform computerMove() after change turn to CROSS
         }
     }
 
